@@ -13,6 +13,7 @@ class Job{
     long priority;
     long maxTime;
     long timeEntered;
+    long timeLeft;
     long memAddr;
     bool inMem;
     bool doingIO;
@@ -31,6 +32,8 @@ class Job{
         priority=-1;
         maxTime=-1;
         timeEntered=-1;
+        timeLeft=-1;
+
         memAddr=-1;
         inMem=false;
         doingIO=false;
@@ -51,6 +54,7 @@ class Job{
         this->maxTime=maxCpu;
         this->timeEntered=currentTime;
 
+        timeLeft=maxCpu;
         memAddr=-1;
         inMem=false;
         doingIO=false;
@@ -102,6 +106,13 @@ class Job{
         return timeEntered;
     }
 
+    void setTimeLeft(long timeLeft){
+        this->timeLeft=timeLeft;
+    }
+
+    long getTimeLeft(){
+        return timeLeft;
+    }
 
     void setMemAddr(long memAddr){
         this->memAddr=memAddr;

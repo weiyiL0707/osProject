@@ -5,12 +5,16 @@
 
  // CPU_SECHEDULER
 class CPUScheduler{
+    //Huangshuo Cao
    private:
         long temp;
-        long time=100000;
+        long time;
 public:
     //return index
-    Job scheduler(vector<Job> jobsTable){
+    CPUScheduler(){
+        time=10000;
+    }
+    long scheduler(vector<Job> jobsTable){
         for(long i=0;i<jobsTable.size();i++){
             if(jobsTable[i].getInMem()&&jobsTable[i].getMaxTime()>0){
                 if(jobsTable[i].getMaxTime()<time){
@@ -19,7 +23,7 @@ public:
                 }
             }
         }
-        return jobsTable[temp];
+        return temp;
     }
 };
 #endif
