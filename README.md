@@ -1,2 +1,0 @@
-# osProject
-operating system project
